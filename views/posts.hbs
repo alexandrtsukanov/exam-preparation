@@ -1,0 +1,40 @@
+<h1>Posts</h1>
+
+<form action="/posts/addpost" method="POST">
+  
+  <div>
+  <label for="photolink">Choose a photo</label>
+  <input name="photolink"/>
+  </div>
+
+  <div>
+  <label for="postBody">Write text</label>
+  <input name="postBody"/>
+  </div>
+
+  <button>Publish</button>
+</form>
+
+<div>
+  {{#each allData}}
+  <div>
+  Author: {{this.author}}
+  </div>
+  <div>
+  <img src="{{this.photo}}" width="100" height="120"/>
+  </div>
+  <div>
+  {{this.body}}
+  </div>
+  <div>
+  {{this.date}}
+  </div>
+  <form action="/posts/edit/{{this._id}}" method="POST">
+    <button>Edit</button>
+  </form>
+  <form action="/posts/delete/{{this._id}}" method="POST">
+    <button>Delete</button>
+  </form>
+  <hr>
+  {{/each}}
+</div>

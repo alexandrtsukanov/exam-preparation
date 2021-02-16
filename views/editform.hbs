@@ -1,0 +1,17 @@
+
+{{#with postToEdit}}
+<form action="/posts/update/{{_id}}" method="POST">
+  
+  <div>
+  <label for="photolink">Choose new photo</label>
+  <input name="photolink" value="{{photo}}"/>
+  </div>
+
+  <div>
+  <label for="postBody">Write new text</label>
+  <input name="postBody" value="{{body}}"/>
+  </div>
+
+  <button>Add new post</button>
+</form>
+{{/with}}

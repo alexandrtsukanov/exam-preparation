@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Exam</title>
+  <script defer src="/js/client.js"></script>
+  {{!-- <script defer src="/js/delete.js"></script> --}}
+</head>
+<body>
+  <div>
+    {{#if loginLocals}}
+
+    Authorized now: {{loginLocals}}
+
+    {{/if}}
+  </div>
+  {{~#if loginLocals}}
+
+  <span>
+    <a href="/">Home</a>
+  </span>
+
+  <span>
+    <a href="/posts">Posts</a>
+  </span>
+
+  <span>
+    <a href="/users/logout">Log out</a>
+  </span>
+
+  {{~^~}}
+
+  <span>
+    <a href="/">Home</a>
+  </span>
+
+  <span>
+    <a href="/users/signup">Sign up</a>
+  </span>
+
+  <span>
+    <a href="/users/login">Log in</a>
+  </span>
+
+  {{~/if}}
+
+  {{{body}}}
+</body>
+</html>
